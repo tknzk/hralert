@@ -7,8 +7,8 @@ require 'slack-notifier'
 client_id = ENV['FITBIT_CLIENT_ID']
 client_secret = ENV['FITBIT_CLIENT_SECRET']
 
-if ENV['REDISTOGO_URL'] != nil
-  uri   = URI.parse ENV['REDISTOGO_URL']
+if ENV['REDIS_URL'] != nil
+  uri   = URI.parse ENV['REDIS_URL']
   redis = Redis.new:host => uri.host, :port => uri.port, :password => uri.password
 else
   redis = Redis.new host:"127.0.0.1", port:"6379"
