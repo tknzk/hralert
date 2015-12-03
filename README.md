@@ -4,7 +4,7 @@
 ## fitbit application
 - register fitbit application
   - https://dev.fitbit.com/
-  - require application type: Peersonal
+  - require application type: Personal
 
 # sample code
 ## get access_token and refresh_token
