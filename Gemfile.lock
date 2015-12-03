@@ -32,6 +32,7 @@ PLATFORMS
 
 DEPENDENCIES
   json
+  oauth2
   omniauth-fitbit-oauth2
   redis
   slack-notifier
