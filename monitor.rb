@@ -3,6 +3,7 @@ require 'base64'
 require 'redis'
 require 'json'
 require 'slack-notifier'
+require 'rest-client'
 
 client_id = ENV['FITBIT_CLIENT_ID']
 client_secret = ENV['FITBIT_CLIENT_SECRET']
@@ -71,8 +72,16 @@ result = JSON.parse(response.body)
 
 activities_heart_intraday = result['activities-heart-intraday']
 datas = []
+mackerel = {}
 activities_heart_intraday['dataset'].each do |data|
   datas << "#{data['time']} => #{data['value']}"
+  epoch = Time.parse("#{date.strftime("%Y-%m-%d")} #{data['time']}").to_i
+  mackerel = {
+    name:  'heartbeat',
+    value: data['value'],
+    time:  epoch,
+  }
+  RestClient.post "https://mackerel.io/api/v0/services/heartrate/tsdb", mackerel.to_json, 'Content-Type' => 'application/json', 'X-Api-Key' => ENV['MACKEREL_API_KEY']
 end
 
 
