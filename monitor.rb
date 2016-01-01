@@ -76,14 +76,14 @@ mackerel = {}
 activities_heart_intraday['dataset'].each do |data|
   datas << "#{data['time']} => #{data['value']}"
   epoch = Time.parse("#{now.strftime("%Y-%m-%d")} #{data['time']}").to_i
-  mackerel = {
+  mackerel = [{
     name:  'heartbeat',
     time:  epoch,
     value: data['value'],
-  }
+  }]
   puts mackerel.inspect
   puts mackerel.to_json
-  puts ENV['MACKEREL_API_KEY']
+  #puts ENV['MACKEREL_API_KEY']
   begin
     RestClient.post "https://mackerel.io/api/v0/services/heartrate/tsdb", mackerel.to_json, 'Content-Type' => 'application/json', 'X-Api-Key' => ENV['MACKEREL_API_KEY']
   rescue => e
