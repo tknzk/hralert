@@ -81,9 +81,7 @@ activities_heart_intraday['dataset'].each do |data|
     time:  epoch,
     value: data['value'],
   }]
-  puts mackerel.inspect
   puts mackerel.to_json
-  #puts ENV['MACKEREL_API_KEY']
   begin
     RestClient.post "https://mackerel.io/api/v0/services/heartrate/tsdb", mackerel.to_json, 'Content-Type' => 'application/json', 'X-Api-Key' => ENV['MACKEREL_API_KEY']
   rescue => e
