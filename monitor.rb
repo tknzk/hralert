@@ -75,7 +75,7 @@ datas = []
 mackerel = {}
 activities_heart_intraday['dataset'].each do |data|
   datas << "#{data['time']} => #{data['value']}"
-  epoch = Time.parse("#{date.strftime("%Y-%m-%d")} #{data['time']}").to_i
+  epoch = Time.parse("#{now.strftime("%Y-%m-%d")} #{data['time']}").to_i
   mackerel = {
     name:  'heartbeat',
     value: data['value'],
