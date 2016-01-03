@@ -72,11 +72,9 @@ response = token.get(endpoint)
 result = JSON.parse(response.body)
 
 activities_heart_intraday = result['activities-heart-intraday']
-#datas = []
 mackerel = {}
 activities_heart_intraday['dataset'].each do |data|
-  #datas << "#{data['time']} => #{data['value']}"
-  epoch = Time.parse("#{now.strftime("%Y-%m-%d")} #{data['time']}").to_i
+  epoch = Time.parse("#{target.strftime("%Y-%m-%d")} #{data['time']}").to_i
   mackerel = [{
     name:  'heartbeat',
     time:  epoch,
@@ -88,23 +86,3 @@ activities_heart_intraday['dataset'].each do |data|
     puts e.message
   end
 end
-
-
-#if datas.empty?
-#  subject = "HeartRate Log checked: #{now}\n NOT GET HEART RATE DATA"
-#
-#  slack = Slack::Notifier.new(ENV['HRALERT_NG_SLACK_WEBHOOK_URL'], channel: ENV['HRALERT_SLACK_WEBHOOK_CHANNEL'])
-#  slack.ping subject
-#
-#else
-#  subject = "HeartRate Log checked: #{now}"
-#  note = {
-#    text: datas.join("\n"),
-#    color: "good"
-#  }
-#
-#  slack = Slack::Notifier.new(ENV['HRALERT_OK_SLACK_WEBHOOK_URL'], channel: ENV['HRALERT_SLACK_WEBHOOK_CHANNEL'])
-#  slack.ping subject, attachments: [note]
-#
-#end
-#
