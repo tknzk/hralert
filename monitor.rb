@@ -21,6 +21,10 @@ if refresh_token.nil?
   refresh_token = ARGV[0]
 end
 
+if ARGV[1] == 'overwrite'
+  refresh_token = ARGV[0]
+end
+
 client = OAuth2::Client.new( client_id, client_secret,
                             site: 'https://api.fitbit.com',
                             authorize_url: 'https://www.fitbit.com/oauth2/authorize',
