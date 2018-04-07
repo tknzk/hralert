@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.0'
+ruby '2.5.1'
 
 gem 'omniauth-fitbit-oauth2'
 gem 'oauth2'
