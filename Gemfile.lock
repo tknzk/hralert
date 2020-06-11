@@ -38,7 +38,7 @@ GEM
       ast (~> 2.4.0)
     rack (2.2.2)
     rainbow (3.0.0)
-    redis (4.1.4)
+    redis (4.2.0)
     regexp_parser (1.7.1)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
