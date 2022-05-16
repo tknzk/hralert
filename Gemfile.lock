@@ -31,7 +31,7 @@ GEM
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    json (2.6.1)
+    json (2.6.2)
     jwt (2.3.0)
     mime-types (3.3)
       mime-types-data (~> 3.2015)
