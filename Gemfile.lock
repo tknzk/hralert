@@ -39,7 +39,7 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.2.3)
     netrc (0.11.0)
-    oauth2 (2.0.2)
+    oauth2 (2.0.3)
       faraday (>= 0.17.3, < 3.0)
       jwt (>= 1.0, < 3.0)
       multi_xml (~> 0.5)
@@ -90,7 +90,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.6)
     unicode-display_width (2.1.0)
-    version_gem (1.0.2)
+    version_gem (1.1.0)
 
 PLATFORMS
   ruby
