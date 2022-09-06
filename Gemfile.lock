@@ -63,9 +63,9 @@ GEM
     rack-protection (2.2.0)
       rack
     rainbow (3.1.1)
-    redis (5.0.2)
-      redis-client (~> 0.7)
-    redis-client (0.7.1)
+    redis (5.0.3)
+      redis-client (>= 0.7.4)
+    redis-client (0.7.4)
       connection_pool
     regexp_parser (2.3.1)
     rest-client (2.1.0)
