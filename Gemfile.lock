@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
-    connection_pool (2.3.0)
+    connection_pool (2.4.1)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     faraday (1.10.2)
@@ -63,9 +63,9 @@ GEM
     rack-protection (2.2.0)
       rack
     rainbow (3.1.1)
-    redis (5.0.6)
+    redis (5.0.7)
       redis-client (>= 0.9.0)
-    redis-client (0.12.1)
+    redis-client (0.15.0)
       connection_pool
     regexp_parser (2.3.1)
     rest-client (2.1.0)
